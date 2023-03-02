@@ -141,19 +141,6 @@ export const EditorData = () => (
     </h3>
   </div>
 );
-const customerGridImage = (props) => (
-  <div className="image flex gap-4">
-    <img
-      className="rounded-full w-10 h-10"
-      src={props.CustomerImage}
-      alt="employee"
-    />
-    <div>
-      <p>{props.CustomerName}</p>
-      <p>{props.CustomerEmail}</p>
-    </div>
-  </div>
-);
 
 const customerGridStatus = (props) => (
   <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
@@ -423,14 +410,20 @@ export const customersGrid = [
     isPrimaryKey: true,
   },
   {
-    headerText: "Name",
+    field: "ContactName",
+    headerText: "Contact Name",
     width: "150",
-    template: customerGridImage,
+    textAlign: "Center",
+  },
+  {
+    field: "Email",
+    headerText: "Email",
+    width: "150",
     textAlign: "Center",
   },
   {
     field: "ProjectName",
-    headerText: "Project Name",
+    headerText: "Enterprise Name",
     width: "150",
     textAlign: "Center",
   },
@@ -442,21 +435,6 @@ export const customersGrid = [
     textAlign: "Center",
     template: customerGridStatus,
   },
-  {
-    field: "Weeks",
-    headerText: "Weeks",
-    width: "100",
-    format: "C2",
-    textAlign: "Center",
-  },
-  {
-    field: "Budget",
-    headerText: "Budget",
-    width: "100",
-    format: "yMd",
-    textAlign: "Center",
-  },
-
   {
     field: "Location",
     headerText: "Location",
@@ -946,168 +924,119 @@ export const ordersGrid = [
 export const customersData = [
   {
     CustomerID: 1013,
-    CustomerName: "Fernando del Real",
-    CustomerEmail: "ferdelreal@gmail.com",
-    CustomerImage: avatar2,
-    ProjectName: "Tauro Web Scraping",
+    ContactName: "Fernando del Real",
+    Email: "ferdelreal@gmail.com",
+    ProjectName: "Tauro",
     Status: "Active",
     StatusBg: "#8BE78B",
-    Weeks: "2",
-    Budget: "$2.5k",
     Location: "Mexico",
   },
   {
     CustomerID: 1012,
-
-    CustomerName: "Jose Mario",
-    CustomerEmail: "jose@hanova.mx",
-    ProjectName: "Hannova NFC Band",
+    ContactName: "Jose Mario",
+    Email: "jose@hanova.mx",
+    ProjectName: "Hannova",
     Status: "Active",
-    CustomerImage: avatar3,
-
     StatusBg: "#8BE78B",
-    Weeks: "5",
-    Budget: "$190k",
     Location: "Mexico",
   },
   {
     CustomerID: 1011,
-
-    CustomerName: "Adrian Cantú",
-    CustomerEmail: "adrian@cantustudio.com",
+    ContactName: "Adrian Cantú",
+    Email: "adrian@cantustudio.com",
     ProjectName: "Go-Din",
     Status: "Canceled",
-    CustomerImage: avatar4,
     StatusBg: "red",
-    Weeks: "5",
-    Budget: "$10k",
     Location: "USA",
   },
   {
     CustomerID: 1010,
-
-    CustomerName: "Roberto Celada",
-    CustomerEmail: "robertocelada97@gmail.com",
-    ProjectName: "MrInsights Knowledge on Demand",
+    ContactName: "Roberto Celada",
+    Email: "robertocelada97@gmail.com",
+    ProjectName: "MrInsights",
     Status: "Canceled",
-    CustomerImage: avatar,
     StatusBg: "red",
-    Weeks: "5",
-    Budget: "$16.5k",
     Location: "USA",
   },
   {
     CustomerID: 1009,
-    CustomerName: "Armando Maquivar",
-    CustomerEmail: "maquivar@airliquid.com",
+    ContactName: "Armando Maquivar",
+    Email: "maquivar@airliquid.com",
     ProjectName: "Air Liquid",
     Status: "Canceled",
-    CustomerImage: avatar2,
     StatusBg: "red",
-    Weeks: "35",
-    Budget: "$200k",
     Location: "USA",
   },
   {
     CustomerID: 1008,
-    CustomerName: "Ricardo Morales",
-    CustomerEmail: "nirav@gmail.com",
-    CustomerImage: avatar2,
-    ProjectName: "Hosting Press HTML",
+    ContactName: "Ricardo Morales",
+    Email: "nirav@gmail.com",
+    ProjectName: "Banorte",
     Status: "Active",
     StatusBg: "#8BE78B",
-    Weeks: "40",
-    Budget: "$2.4k",
-    Location: "India",
+    Location: "Mexico",
   },
   {
     CustomerID: 1007,
-
-    CustomerName: "Juan Jose Sanchez",
-    CustomerEmail: "jose.sanchez@enersys.com",
-    ProjectName: "Enersys Instalation System",
+    ContactName: "Juan Jose Sanchez",
+    Email: "jose.sanchez@enersys.com",
+    ProjectName: "Enersys",
     Status: "Pending",
-    CustomerImage: avatar3,
     StatusBg: "#FEC90F",
-    Weeks: "10",
-    Budget: "$200",
     Location: "Mexico",
   },
   {
     CustomerID: 1006,
-
-    CustomerName: "Mario Arredondo",
-    CustomerEmail: "mario.arredondo@sealedair.com",
-    ProjectName: "0metros Rewriting",
+    ContactName: "Mario Arredondo",
+    Email: "mario.arredondo@sealedair.com",
+    ProjectName: "Sealed Air",
     Status: "Active",
-    CustomerImage: avatar4,
     StatusBg: "#8BE78B",
-    Weeks: "19",
-    Budget: "$24.5k",
     Location: "USA",
   },
   {
     CustomerID: 1005,
-
-    CustomerName: "Sergio Garcia",
-    CustomerEmail: "sergiog@endurance.com",
-    ProjectName: "Endurance Financial Calculator",
+    ContactName: "Sergio Garcia",
+    Email: "sergiog@endurance.com",
+    ProjectName: "Endurance",
     Status: "Completed",
-    CustomerImage: avatar,
     StatusBg: "#808080",
-    Weeks: "5",
-    Budget: "$10k",
     Location: "USA",
   },
   {
     CustomerID: 1004,
-
-    CustomerName: "Oscar Lucio",
-    CustomerEmail: "oscar@consorcioccr.com",
-    ProjectName: "Quotation Management",
+    ContactName: "Oscar Lucio",
+    Email: "oscar@consorcioccr.com",
+    ProjectName: "CCR",
     Status: "Completed",
-    CustomerImage: avatar2,
     StatusBg: "#808080",
-    Weeks: "8",
-    Budget: "$60k",
     Location: "Mexico",
   },
   {
     CustomerID: 1003,
-    CustomerName: "Giann Verri",
-    CustomerEmail: "giann@twbp.com",
-    CustomerImage: avatar2,
-    ProjectName: "Relationship App",
+    ContactName: "Giann Verri",
+    Email: "giann@twbp.com",
+    ProjectName: "TWBP",
     Status: "Completed",
     StatusBg: "#808080",
-    Weeks: "40",
-    Budget: "$2.4k",
     Location: "USA",
   },
   {
     CustomerID: 1002,
-
-    CustomerName: "Karina Rosas",
-    CustomerEmail: "kari@koolstudio.com",
+    ContactName: "Karina Rosas",
+    Email: "kari@koolstudio.com",
     ProjectName: "Kool Studio",
     Status: "Completed",
-    CustomerImage: avatar3,
     StatusBg: "#808080",
-    Weeks: "11",
-    Budget: "$3.9k",
     Location: "Mexico",
   },
   {
     CustomerID: 1001,
-
-    CustomerName: "Alberto Obed",
-    CustomerEmail: "obeda@gmail.com",
+    ContactName: "Alberto Obed",
+    Email: "obeda@gmail.com",
     ProjectName: "Gobierno de Colosio",
     Status: "Completed",
-    CustomerImage: avatar4,
     StatusBg: "#808080",
-    Weeks: "19",
-    Budget: "$24.5k",
     Location: "Mexico",
   },
 ];
